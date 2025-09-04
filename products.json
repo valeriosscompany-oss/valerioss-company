@@ -1,0 +1,162 @@
+[
+  {
+    "id": "shp-001",
+    "platform": "shopee",
+    "title": "Produto Shopee 1",
+    "description": "Descrição breve do produto 1 da Shopee.",
+    "image": "https://via.placeholder.com/400x300.png?text=Shopee+Produto",
+    "url": "https://shopee.com/produto-1"
+  },
+  {
+    "id": "shp-002",
+    "platform": "shopee",
+    "title": "Produto Shopee 2",
+    "description": "Descrição breve do produto 2 da Shopee.",
+    "image": "https://via.placeholder.com/400x300.png?text=Shopee+Produto",
+    "url": "https://shopee.com/produto-2"
+  },
+  {
+    "id": "shp-003",
+    "platform": "shopee",
+    "title": "Produto Shopee 3",
+    "description": "Descrição breve do produto 3 da Shopee.",
+    "image": "https://via.placeholder.com/400x300.png?text=Shopee+Produto",
+    "url": "https://shopee.com/produto-3"
+  },
+  {
+    "id": "shp-004",
+    "platform": "shopee",
+    "title": "Produto Shopee 4",
+    "description": "Descrição breve do produto 4 da Shopee.",
+    "image": "https://via.placeholder.com/400x300.png?text=Shopee+Produto",
+    "url": "https://shopee.com/produto-4"
+  },
+  {
+    "id": "shn-001",
+    "platform": "shein",
+    "title": "Produto Shein 1",
+    "description": "Descrição breve do produto 1 da Shein.",
+    "image": "https://via.placeholder.com/400x300.png?text=Shein+Produto",
+    "url": "https://shein.com/produto-1"
+  },
+  {
+    "id": "shn-002",
+    "platform": "shein",
+    "title": "Produto Shein 2",
+    "description": "Descrição breve do produto 2 da Shein.",
+    "image": "https://via.placeholder.com/400x300.png?text=Shein+Produto",
+    "url": "https://shein.com/produto-2"
+  },
+  {
+    "id": "shn-003",
+    "platform": "shein",
+    "title": "Produto Shein 3",
+    "description": "Descrição breve do produto 3 da Shein.",
+    "image": "https://via.placeholder.com/400x300.png?text=Shein+Produto",
+    "url": "https://shein.com/produto-3"
+  },
+  {
+    "id": "shn-004",
+    "platform": "shein",
+    "title": "Produto Shein 4",
+    "description": "Descrição breve do produto 4 da Shein.",
+    "image": "https://via.placeholder.com/400x300.png?text=Shein+Produto",
+    "url": "https://shein.com/produto-4"
+  },
+  {
+    "id": "amz-001",
+    "platform": "amazon",
+    "title": "Produto Amazon 1",
+    "description": "Descrição breve do produto 1 da Amazon.",
+    "image": "https://via.placeholder.com/400x300.png?text=Amazon+Produto",
+    "url": "https://amazon.com/produto-1"
+  },
+  {
+    "id": "amz-002",
+    "platform": "amazon",
+    "title": "Produto Amazon 2",
+    "description": "Descrição breve do produto 2 da Amazon.",
+    "image": "https://via.placeholder.com/400x300.png?text=Amazon+Produto",
+    "url": "https://amazon.com/produto-2"
+  },
+  {
+    "id": "amz-003",
+    "platform": "amazon",
+    "title": "Produto Amazon 3",
+    "description": "Descrição breve do produto 3 da Amazon.",
+    "image": "https://via.placeholder.com/400x300.png?text=Amazon+Produto",
+    "url": "https://amazon.com/produto-3"
+  },
+  {
+    "id": "amz-004",
+    "platform": "amazon",
+    "title": "Produto Amazon 4",
+    "description": "Descrição breve do produto 4 da Amazon.",
+    "image": "https://via.placeholder.com/400x300.png?text=Amazon+Produto",
+    "url": "https://amazon.com/produto-4"
+  },
+  {
+    "id": "kiw-001",
+    "platform": "kiwify",
+    "title": "Produto Kiwify 1",
+    "description": "Descrição breve do produto 1 da Kiwify.",
+    "image": "https://via.placeholder.com/400x300.png?text=Kiwify+Produto",
+    "url": "https://kiwify.com/produto-1"
+  },
+  {
+    "id": "kiw-002",
+    "platform": "kiwify",
+    "title": "Produto Kiwify 2",
+    "description": "Descrição breve do produto 2 da Kiwify.",
+    "image": "https://via.placeholder.com/400x300.png?text=Kiwify+Produto",
+    "url": "https://kiwify.com/produto-2"
+  },
+  {
+    "id": "kiw-003",
+    "platform": "kiwify",
+    "title": "Produto Kiwify 3",
+    "description": "Descrição breve do produto 3 da Kiwify.",
+    "image": "https://via.placeholder.com/400x300.png?text=Kiwify+Produto",
+    "url": "https://kiwify.com/produto-3"
+  },
+  {
+    "id": "kiw-004",
+    "platform": "kiwify",
+    "title": "Produto Kiwify 4",
+    "description": "Descrição breve do produto 4 da Kiwify.",
+    "image": "https://via.placeholder.com/400x300.png?text=Kiwify+Produto",
+    "url": "https://kiwify.com/produto-4"
+  },
+  {
+    "id": "edz-001",
+    "platform": "eduzz",
+    "title": "Produto Eduzz 1",
+    "description": "Descrição breve do produto 1 da Eduzz.",
+    "image": "https://via.placeholder.com/400x300.png?text=Eduzz+Produto",
+    "url": "https://eduzz.com/produto-1"
+  },
+  {
+    "id": "edz-002",
+    "platform": "eduzz",
+    "title": "Produto Eduzz 2",
+    "description": "Descrição breve do produto 2 da Eduzz.",
+    "image": "https://via.placeholder.com/400x300.png?text=Eduzz+Produto",
+    "url": "https://eduzz.com/produto-2"
+  },
+  {
+    "id": "edz-003",
+    "platform": "eduzz",
+    "title": "Produto Eduzz 3",
+    "description": "Descrição breve do produto 3 da Eduzz.",
+    "image": "https://via.placeholder.com/400x300.png?text=Eduzz+Produto",
+    "url": "https://eduzz.com/produto-3"
+  },
+  {
+    "id": "edz-004",
+    "platform": "eduzz",
+    "title": "Produto Eduzz 4",
+    "description": "Descrição breve do produto 4 da Eduzz.",
+    "image": "https://via.placeholder.com/400x300.png?text=Eduzz+Produto",
+    "url": "https://eduzz.com/produto-4"
+  }
+]
