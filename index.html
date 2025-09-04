@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valerioss Company — Vitrine de Produtos</title>
+  <meta name="description" content="Vitrine de produtos da Valerioss Company com links para Shopee, Shein, Amazon, Kiwify e Eduzz." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --surface: #121621;
+      --muted: #9aa3b2;
+      --text: #e8ecf1;
+      --accent: #1ea7ff;
+      --ring: #2b90ff33;
+
+      /* Paletas por plataforma */
+      --shopee: #f94e1f;         /* laranja vivo */
+      --amazon: #146eb4;         /* azul amazon */
+      --amazon-accent: #ff9900;  /* laranja amazon */
+      --shein: #0f1115;          /* preto elegante */
+      --shein-accent: #ffffff;   /* branco */
+      --kiwify: #6c5ce7;         /* roxo vibrante */
+      --kiwify-accent: #ffd166;  /* amarelo suave */
+      --eduzz: #111827;          /* fundo escuro */
+      --eduzz-accent: #fbbf24;   /* amarelo eduzz */
+
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, #0b0d12 0%, #0d1117 100%);
+      color: var(--text);
+    }
+
+    .container { width: min(1200px, 100% - 2rem); margin: 0 auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: color-mix(in oklab, #0b0d12 75%, transparent);
+      border-bottom: 1px solid #1c2230;
+    }
+    .topbar { display: flex; gap: 16px; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: radial-gradient(100% 100% at 0% 0%, var(--accent), #26d0ff);
+      box-shadow: 0 10px 30px #26d0ff22, inset 0 0 0 1px #ffffff22;
+    }
+    .title { font-weight: 700; letter-spacing: 0.5px; }
+    nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: 14px;
+      background: #161b26; border: 1px solid #232a39; color: #dfe6f3; text-decoration: none;
+      box-shadow: 0 1px 0 #ffffff0a inset;
+    }
+    .chip:hover { border-color: #2d3a52; }
+
+    .toolbar { display:flex; gap:12px; align-items:center; }
+    .search {
+      display:flex; align-items:center; gap:8px; background:#101522; border:1px solid #1f2635;
+      padding:8px 12px; border-radius: 12px; width:min(320px, 50vw);
+    }
+    .search input { flex:1; background:transparent; border:0; outline:0; color:#e9eef7; font-size:14px; }
+
+    .hero { padding: 28px 0 8px; }
+    .hero h1 { margin: 0 0 10px; font-size: clamp(22px, 3vw, 28px); }
+    .hero p { margin: 0; color: var(--muted); }
+
+    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap:16px; }
+    .cards { grid-column: 1/-1; display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:16px; }
+
+    .card { position:relative; overflow:hidden; border-radius: var(--radius); background: #0f1421; border: 1px solid #1b2333; box-shadow: 0 10px 30px #00000033; }
+    .badge { position:absolute; top:12px; left:12px; padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px; color:#0c1220; background:#d1e4ff; }
+    .media { aspect-ratio: 4/3; width:100%; background:#0a0f1a; display:grid; place-items:center; }
+    .media img { width:100%; height:100%; object-fit: cover; display:block; }
+
+    .content { padding:14px; display:grid; gap:10px; }
+    .title-3 { font-size: 16px; font-weight: 700; margin: 0; }
+    .desc { color: #a9b3c5; font-size: 14px; line-height:1.5; }
+
+    .buy { display:flex; gap:10px; }
+    .btn {
+      flex:1; display:inline-flex; justify-content:center; align-items:center; gap:8px; padding:10px 12px;
+      border-radius: 12px; font-weight: 700; font-size: 14px; text-decoration:none;
+      border:1px solid #263145; background:#121a2b; color:#dfe6f3;
+    }
+    .btn:hover { border-color:#2f3e57; }
+
+    .btn.shopee { background: color-mix(in oklab, var(--shopee) 32%, #111722); border-color: color-mix(in oklab, var(--shopee) 55%, #1b2333); }
+    .btn.amazon { background: color-mix(in oklab, var(--amazon) 28%, #111722); border-color: color-mix(in oklab, var(--amazon) 55%, #1b2333); }
+    .btn.shein { background: color-mix(in oklab, var(--shein) 45%, #111722); border-color: #232833; color: #fff; }
+    .btn.kiwify { background: color-mix(in oklab, var(--kiwify) 32%, #111722); border-color: color-mix(in oklab, var(--kiwify) 55%, #1b2333); }
+    .btn.eduzz { background: color-mix(in oklab, var(--eduzz) 45%, #111722); border-color: color-mix(in oklab, var(--eduzz-accent) 60%, #1b2333); }
+
+    .section { margin: 28px 0 18px; }
+    .section-header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 12px; }
+    .section .h2 { margin:0; font-size: clamp(18px, 2.4vw, 22px); }
+    .section .sub { margin:0; color: var(--muted); font-size: 14px; }
+
+    .tag { padding:6px 10px; border-radius:999px; font-size:12px; border:1px solid #263145; background:#0e1422; color:#dfe6f3; }
+
+    /* Borda de seção tematizada */
+    .theme-shopee { border-left: 4px solid var(--shopee); padding-left: 12px; }
+    .theme-amazon { border-left: 4px solid var(--amazon-accent); padding-left: 12px; }
+    .theme-shein { border-left: 4px solid var(--shein-accent); padding-left: 12px; }
+    .theme-kiwify { border-left: 4px solid var(--kiwify); padding-left: 12px; }
+    .theme-eduzz { border-left: 4px solid var(--eduzz-accent); padding-left: 12px; }
+
+    footer { margin: 40px 0 60px; color: var(--muted); font-size: 14px; text-align:center; }
+
+    /* Utilitários */
+    .hidden { display:none !important; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+    @media (max-width: 720px) {
+      .search { width: 100%; }
+      nav { display:none; }
+      .topbar { flex-wrap:wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">Valerioss Company</div>
+          <div style="font-size:12px;color:#9aa3b2">Vitrine de produtos — links oficiais</div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <form class="search" role="search" onsubmit="event.preventDefault()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.3-4.3" stroke="#9aa3b2" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="#9aa3b2" stroke-width="2" fill="none"/></svg>
+          <input id="q" type="search" placeholder="Buscar produtos…" autocomplete="off" />
+        </form>
+        <nav aria-label="Navegação por plataforma">
+          <a class="chip" href="#shopee">Shopee</a>
+          <a class="chip" href="#shein">Shein</a>
+          <a class="chip" href="#amazon">Amazon</a>
+          <a class="chip" href="#kiwify">Kiwify</a>
+          <a class="chip" href="#eduzz">Eduzz</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Encontre suas melhores ofertas</h1>
+      <p>Navegue por seções temáticas (Shopee, Shein, Amazon, Kiwify, Eduzz). Cada produto tem link de compra direto para a plataforma.</p>
+    </section>
+
+    <!-- Seções serão preenchidas via JS -->
+    <section id="shopee" class="section">
+      <div class="section-header theme-shopee">
+        <div>
+          <h2 class="h2">Shopee</h2>
+          <p class="sub">Ofertas e achados com frete vantajoso.</p>
+        </div>
+        <span class="tag" id="count-shopee">0 itens</span>
+      </div>
+      <div class="cards" data-platform="shopee"></div>
+    </section>
+
+    <section id="shein" class="section">
+      <div class="section-header theme-shein">
+        <div>
+          <h2 class="h2">Shein</h2>
+          <p class="sub">Moda e tendências com estilo minimalista.</p>
+        </div>
+        <span class="tag" id="count-shein">0 itens</span>
+      </div>
+      <div class="cards" data-platform="shein"></div>
+    </section>
+
+    <section id="amazon" class="section">
+      <div class="section-header theme-amazon">
+        <div>
+          <h2 class="h2">Amazon</h2>
+          <p class="sub">Produtos com entrega rápida e confiança.</p>
+        </div>
+        <span class="tag" id="count-amazon">0 itens</span>
+      </div>
+      <div class="cards" data-platform="amazon"></div>
+    </section>
+
+    <section id="kiwify" class="section">
+      <div class="section-header theme-kiwify">
+        <div>
+          <h2 class="h2">Kiwify</h2>
+          <p class="sub">Cursos e infoprodutos selecionados.</p>
+        </div>
+        <span class="tag" id="count-kiwify">0 itens</span>
+      </div>
+      <div class="cards" data-platform="kiwify"></div>
+    </section>
+
+    <section id="eduzz" class="section">
+      <div class="section-header theme-eduzz">
+        <div>
+          <h2 class="h2">Eduzz</h2>
+          <p class="sub">Soluções digitais e conteúdos premium.</p>
+        </div>
+        <span class="tag" id="count-eduzz">0 itens</span>
+      </div>
+      <div class="cards" data-platform="eduzz"></div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Valerioss Company — Todos os direitos reservados.
+    </footer>
+  </main>
+
+  <script>
+    // =============================================================
+    // COMO EDITAR OS PRODUTOS
+    // -------------------------------------------------------------
+    // 1) Você pode editar diretamente a constante PRODUCTS abaixo.
+    //    Suporta até 100 itens tranquilamente.
+    // 2) OU criar um arquivo 'products.json' na mesma pasta do site
+    //    com o mesmo formato do array abaixo. O site vai tentar 
+    //    carregar esse arquivo automaticamente e substituir os dados.
+    // -------------------------------------------------------------
+    // Campos:
+    // - id: string única (ex: "shp-001")
+    // - platform: "shopee" | "shein" | "amazon" | "kiwify" | "eduzz"
+    // - title: nome do produto
+    // - description: texto breve
+    // - image: URL de imagem (pode ser de hospedagens públicas)
+    // - url: link de compra oficial
+    // =============================================================
+
+    const PRODUCTS_FALLBACK = [
+      // SHOPEE
+      {
+        id: "shp-001",
+        platform: "shopee",
+        title: "Headset Gamer Falcon X",
+        description: "Som imersivo 7.1, microfone com redução de ruído.",
+        image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1200&auto=format&fit=crop",
+        url: "https://shopee.example.com/produto-headset"
+      },
+      {
+        id: "shp-002",
+        platform: "shopee",
+        title: "Garrafa Térmica Inox 950ml",
+        description: "Mantém a temperatura por até 12h, livre de BPA.",
+        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1200&auto=format&fit=crop",
+        url: "https://shopee.example.com/garrafa-termica"
+      },
+
+      // SHEIN
+      {
+        id: "shn-001",
+        platform: "shein",
+        title: "Jaqueta Minimal Preta",
+        description: "Corte reto, estilo urbano, unissex.",
+        image: "https://images.unsplash.com/photo-1551024709-8f23befc6cf7?q=80&w=1200&auto=format&fit=crop",
+        url: "https://shein.example.com/jaqueta-minimal"
+      },
+      {
+        id: "shn-002",
+        platform: "shein",
+        title: "Tênis Casual Branco",
+        description: "Conforto diário e visual clean.",
+        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200&auto=format&fit=crop",
+        url: "https://shein.example.com/tenis-casual"
+      },
+
+      // AMAZON
+      {
+        id: "amz-001",
+        platform: "amazon",
+        title: "Kindle Leitor Digital",
+        description: "Tela antirreflexo, bateria de semanas.",
+        image: "https://images.unsplash.com/photo-1513477967668-2aaf11838bd0?q=80&w=1200&auto=format&fit=crop",
+        url: "https://amazon.example.com/kindle"
+      },
+      {
+        id: "amz-002",
+        platform: "amazon",
+        title: "Echo Dot Assistente",
+        description: "Controle sua casa com a voz.",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+        url: "https://amazon.example.com/echo-dot"
+      },
+
+      // KIWIFY (infoprodutos)
+      {
+        id: "kiw-001",
+        platform: "kiwify",
+        title: "Curso de Edição de Vídeo",
+        description: "Do zero ao avançado com projetos reais.",
+        image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop",
+        url: "https://kiwify.example.com/curso-video"
+      },
+      {
+        id: "kiw-002",
+        platform: "kiwify",
+        title: "Pack de Presets Mobile",
+        description: "Edição de fotos em 1 clique (LR).",
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+        url: "https://kiwify.example.com/presets"
+      },
+
+      // EDUZZ
+      {
+        id: "edz-001",
+        platform: "eduzz",
+        title: "Mentoria Social Media",
+        description: "Plano de 30 dias com acompanhamento.",
+        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop",
+        url: "https://eduzz.example.com/mentoria"
+      },
+      {
+        id: "edz-002",
+        platform: "eduzz",
+        title: "E-book Receita Fitness",
+        description: "40 receitas rápidas e saudáveis.",
+        image: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?q=80&w=1200&auto=format&fit=crop",
+        url: "https://eduzz.example.com/ebook-fitness"
+      }
+    ];
+
+    // Tenta carregar products.json; se falhar, usa PRODUCTS_FALLBACK
+    async function loadProducts() {
+      try {
+        const res = await fetch('products.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Sem products.json externo');
+        const data = await res.json();
+        if (!Array.isArray(data)) throw new Error('Formato inválido');
+        return data;
+      } catch (e) {
+        return PRODUCTS_FALLBACK;
+      }
+    }
+
+    const platformLabels = {
+      shopee: { label: 'Shopee', btnClass: 'shopee' },
+      shein: { label: 'Shein', btnClass: 'shein' },
+      amazon: { label: 'Amazon', btnClass: 'amazon' },
+      kiwify: { label: 'Kiwify', btnClass: 'kiwify' },
+      eduzz: { label: 'Eduzz', btnClass: 'eduzz' },
+    };
+
+    function cardTemplate(p) {
+      const { label, btnClass } = platformLabels[p.platform] || { label: p.platform, btnClass: '' };
+      const safeDesc = (p.description || '').toString().slice(0, 180);
+      const imgSrc = p.image || '';
+      return `
+        <article class="card" data-id="${p.id}">
+          <span class="badge">${label}</span>
+          <div class="media"><img loading="lazy" data-src="${imgSrc}" alt="${p.title}" /></div>
+          <div class="content">
+            <h3 class="title-3">${p.title}</h3>
+            <p class="desc">${safeDesc}</p>
+            <div class="buy">
+              <a class="btn ${btnClass}" href="${p.url}" target="_blank" rel="noopener noreferrer">Comprar na ${label}</a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function groupByPlatform(items) {
+      const map = { shopee:[], shein:[], amazon:[], kiwify:[], eduzz:[] };
+      for (const it of items) {
+        if (map[it.platform]) map[it.platform].push(it);
+      }
+      return map;
+    }
+
+    function renderCounts(groups) {
+      for (const key of Object.keys(groups)) {
+        const el = document.getElementById(`count-${key}`);
+        if (el) el.textContent = `${groups[key].length} item${groups[key].length === 1 ? '' : 's'}`;
+      }
+    }
+
+    function lazyImages(root = document) {
+      const imgs = root.querySelectorAll('img[data-src]');
+      const io = new IntersectionObserver((entries, obs) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            const img = e.target; img.src = img.getAttribute('data-src'); img.removeAttribute('data-src');
+            obs.unobserve(img);
+          }
+        }
+      }, { rootMargin: '200px 0px' });
+      imgs.forEach(img => io.observe(img));
+    }
+
+    function filterProducts(all, term) {
+      if (!term) return all;
+      const q = term.toLowerCase();
+      return all.filter(p => `${p.title} ${p.description}`.toLowerCase().includes(q));
+    }
+
+    async function main() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const all = await loadProducts();
+
+      // Limita a 100 produtos por questão de performance (pode aumentar se quiser)
+      const trimmed = all.slice(0, 100);
+
+      // Busca
+      const q = document.getElementById('q');
+      const sections = document.querySelectorAll('.cards');
+
+      function render(term = '') {
+        const filtered = filterProducts(trimmed, term);
+        const groups = groupByPlatform(filtered);
+        renderCounts(groups);
+        for (const sec of sections) {
+          const plat = sec.getAttribute('data-platform');
+          const html = groups[plat].map(cardTemplate).join('');
+          sec.innerHTML = html || `<p class="desc">Nenhum item encontrado nesta seção.</p>`;
+        }
+        lazyImages(document);
+      }
+
+      render('');
+
+      q.addEventListener('input', (e) => {
+        render(e.target.value);
+      });
+    }
+
+    main();
+  </script>
+</body>
+</html>
